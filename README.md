@@ -86,7 +86,7 @@ lib/
 ## ▶️ Getting Started
 
 ```bash
-git clone <your-repo-url>
+git clone <your-repo-url>](https://github.com/JiyadAhammad/kutoot_task
 cd project
 flutter pub get
 flutter run
