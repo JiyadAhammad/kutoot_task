@@ -26,7 +26,15 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIApplicationSceneManifest</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location to show you nearby stores and your current city name.</string>
+
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs access to location even in the background to keep your city updated.</string>
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to location to provide a better shopping experience based on your city.</string>
+		<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>

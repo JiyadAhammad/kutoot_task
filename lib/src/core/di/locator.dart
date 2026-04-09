@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_app/src/core/network/dio_client.dart';
 import 'package:my_app/src/core/network/connectivity_service.dart';
+import 'package:my_app/src/features/home/bloc/dashboard_bloc.dart';
 import 'package:my_app/src/features/task/data/models/task_model.dart';
 import 'package:my_app/src/features/task/domain/repositories/task_repository.dart';
 import 'package:my_app/src/features/task/data/repositories/task_repository_impl.dart';
@@ -28,4 +29,5 @@ Future<void> setupInjection() async {
   // Register Blocs
   sl.registerFactory(() => TaskBloc(sl<TaskRepository>()));
   sl.registerFactory(() => FeedBloc(sl<FeedRepository>()));
+  sl.registerFactory(() => DashboardBloc());
 }

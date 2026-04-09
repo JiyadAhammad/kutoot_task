@@ -6,8 +6,11 @@ import 'package:my_app/src/core/di/locator.dart';
 import 'package:my_app/src/core/network/connectivity_service.dart';
 import 'package:my_app/src/features/feed/presentation/bloc/feed_bloc.dart';
 import 'package:my_app/src/features/feed/presentation/screens/feed_screen.dart';
+import 'package:my_app/src/features/home/bloc/dashboard_bloc.dart';
 import 'package:my_app/src/features/task/presentation/bloc/task_bloc.dart';
 import 'package:my_app/src/features/task/presentation/screens/task_screen.dart';
+
+import 'src/features/home/presentation/pages/kutoot_dashboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +30,10 @@ class MyApp extends StatelessWidget {
           create: (context) => sl<TaskBloc>()..add(const TaskEvent.started()),
         ),
         BlocProvider(create: (context) => sl<FeedBloc>()),
+        BlocProvider(
+          create: (context) =>
+              sl<DashboardBloc>()..add(DashboardEvent.fetchLocationRequested()),
+        ),
       ],
       child: MaterialApp(
         title: 'Kutoot Assignment',
@@ -40,7 +47,7 @@ class MyApp extends StatelessWidget {
             foregroundColor: Colors.white,
           ),
         ),
-        home: const AppMainScreen(),
+        home: const KutootDashboard(),
       ),
     );
   }
